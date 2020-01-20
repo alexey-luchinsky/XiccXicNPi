@@ -86,8 +86,6 @@ void EvtXiccXicNpi::init() {
 void EvtXiccXicNpi::initProbMax() {
     EvtId parnum = getParentId();
     EvtId daughtnum1 = getDaug(0);
-    EvtId daughtnum2 = getDaug(1);
-    EvtId daughtnum3 = getDaug(2);
     size_t n = getNDaug();
     
 
@@ -120,7 +118,7 @@ void EvtXiccXicNpi::HadronicAmp(EvtParticle* parent,
     const EvtVector4R pp = parent->getP4Lab();
     const EvtVector4R cp = child->getP4Lab();
     const double pm = parent->mass();
-    const double cm = child->mass();
+//    const double cm = child->mass();
     // \bar{u} \gamma^{\mu} u
     T[0] = EvtLeptonVCurrent(Sfinal, Sinit);
 
@@ -141,7 +139,6 @@ const double EvtXiccXicNpi::ff(const double f0, const double alpha, const double
 }
 
 void EvtXiccXicNpi::decay(EvtParticle *b1) {
-    static EvtId TAUM = EvtPDL::getId("tau-");
 
     b1->initializePhaseSpace(getNDaug(), getDaugs());
 
