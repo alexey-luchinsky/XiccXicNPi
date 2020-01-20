@@ -50,19 +50,15 @@ void EvtOmegaOmega::init() {
 
     // check that there are 0 arguments
     checkNArg(0);
-    //checkNDaug(3);
 
     checkSpinParent(EvtSpinType::DIRAC);
 
-    //checkSpinDaughter(0, EvtSpinType::DIRAC);
-    //checkSpinDaughter(1, EvtSpinType::DIRAC);
-    //checkSpinDaughter(2, EvtSpinType::NEUTRINO);
+    checkSpinDaughter(0, EvtSpinType::DIRAC);
 
     EvtId parnum = getParentId();
     EvtId daughtnum = getDaug(0);
 
-
-
+    // get FF parameters
     if (parnum == EvtPDL::getId("Xi_cc++") && daughtnum == EvtPDL::getId("Lambda_c+")) {
         //    \Xi_{cc}^{++}\Lambda_{c}^{+}
         f1a = 0.790517;
@@ -321,7 +317,7 @@ void EvtOmegaOmega::initProbMax() {
         }
 
         if (parnum == EvtPDL::getId("Xi_cc+") && daughtnum1 == EvtPDL::getId("Xi_c0")) {
-            //setProbMax(9000.0);
+            setProbMax(6500.0);
         }
     }
     if (n == 4) //3pi case
@@ -373,7 +369,7 @@ void EvtOmegaOmega::initProbMax() {
         }
 
         if (parnum == EvtPDL::getId("Xi_cc+") && daughtnum1 == EvtPDL::getId("Xi_c0")) {
-            //setProbMax(9000.0);
+            setProbMax(6500);
         }
     }
     if (n == 6) //5pi case
@@ -580,30 +576,3 @@ void EvtOmegaOmega::decay(EvtParticle *b1) {
 
     return;
 }
-
-
-/*   
- EvtVector4C l1, l2, tau1, tau2;
-
-if (p->getId()==TAUM) {
-
-   tau1=EvtLeptonVACurrent(nut->spParentNeutrino(),p->sp(0));
-   tau2=EvtLeptonVACurrent(nut->spParentNeutrino(),p->sp(1));
-   l1=EvtLeptonVACurrent(l->spParent(0),nul->spParentNeutrino());
-   l2=EvtLeptonVACurrent(l->spParent(1),nul->spParentNeutrino());
-
- }
- else{
-   tau1=EvtLeptonVACurrent(p->sp(0),nut->spParentNeutrino());
-   tau2=EvtLeptonVACurrent(p->sp(1),nut->spParentNeutrino());
-   l1=EvtLeptonVACurrent(nul->spParentNeutrino(),l->spParent(0));
-   l2=EvtLeptonVACurrent(nul->spParentNeutrino(),l->spParent(1));
- }
-
- vertex(0,0,tau1*l1);
- vertex(0,1,tau1*l2);
- vertex(1,0,tau2*l1);
- vertex(1,1,tau2*l2);
- return;
-
-}*/
