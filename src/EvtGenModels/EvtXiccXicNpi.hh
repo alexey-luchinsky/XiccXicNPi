@@ -9,12 +9,12 @@
 
 class EvtParticle;
 
-class EvtOmegaOmega3pi:public  EvtDecayAmp  {
+class EvtXiccXicNpi:public  EvtDecayAmp  {
 
 public:
 
-    EvtOmegaOmega3pi() {}
-    virtual ~EvtOmegaOmega3pi();
+    EvtXiccXicNpi() {}
+    virtual ~EvtXiccXicNpi();
 
     std::string getName();
     EvtDecayBase* clone();
@@ -30,10 +30,7 @@ public:
     EvtVector4C EvtSigmaCurrent(const EvtDiracSpinor &d, const EvtDiracSpinor &dp) ;
 
     void decay(EvtParticle *p); 
-
     double f1a, f1b, f1c, f1d, f2a, f2b, f2c, f2d, g1a, g1b, g1c, g1d, g2a, g2b, g2c, g2d;
-
-
 };
 
 #endif

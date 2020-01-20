@@ -5,7 +5,7 @@
  * Created on January 18, 2020, 11:12 AM
  */
 #include "segR.h"
-#include "EvtGenModels/EvtOmegaOmega.hh"
+#include "EvtGenModels/EvtXiccXicNpi.hh"
 #include "EvtGenBase/EvtModel.hh"
 
 using std::endl;
@@ -17,7 +17,7 @@ int main(int argc, char* argv[]) {
     timer.Start();
 
     EvtModel &modellist = EvtModel::instance();
-    modellist.registerModel(new EvtOmegaOmega());
+    modellist.registerModel(new EvtXiccXicNpi());
 
     segR(argc, argv);
 
