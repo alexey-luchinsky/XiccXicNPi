@@ -36,7 +36,7 @@ EvtXiccXicNpi::~EvtXiccXicNpi() {
 
 std::string EvtXiccXicNpi::getName() {
 
-    return "OMEGAOMEGA";
+    return "XICCXICNPI";
 
 }
 
