@@ -5,7 +5,7 @@
 #include "EvtGenBase/EvtParticle.hh"
 #include "EvtGenBase/EvtPDL.hh"
 #include "EvtGenBase/EvtGenKine.hh"
-#include "EvtGenModels/EvtOmegaOmega.hh"
+#include "EvtGenModels/EvtXiccXicNpi.hh"
 #include "EvtGenBase/EvtDiracSpinor.hh"
 #include "EvtGenBase/EvtReport.hh"
 #include "EvtGenBase/EvtVector4C.hh"
@@ -15,7 +15,7 @@
 #include "EvtGenBase/EvtVector3R.hh"
 #include "EvtGenModels/EvtWHad.hh"
 
-EvtOmegaOmega::~EvtOmegaOmega() {
+EvtXiccXicNpi::~EvtXiccXicNpi() {
     f1a = 1;
     f1b = 1;
     f1c = 1;
@@ -34,19 +34,19 @@ EvtOmegaOmega::~EvtOmegaOmega() {
     g2d = 1;
 }
 
-std::string EvtOmegaOmega::getName() {
+std::string EvtXiccXicNpi::getName() {
 
     return "OMEGAOMEGA";
 
 }
 
-EvtDecayBase* EvtOmegaOmega::clone() {
+EvtDecayBase* EvtXiccXicNpi::clone() {
 
-    return new EvtOmegaOmega;
+    return new EvtXiccXicNpi;
 
 }
 
-void EvtOmegaOmega::init() {
+void EvtXiccXicNpi::init() {
 
     // check that there are 0 arguments
     checkNArg(0);
@@ -261,7 +261,7 @@ void EvtOmegaOmega::init() {
 
 }
 
-void EvtOmegaOmega::initProbMax() {
+void EvtXiccXicNpi::initProbMax() {
     EvtId parnum = getParentId();
     EvtId daughtnum1 = getDaug(0);
     EvtId daughtnum2 = getDaug(1);
@@ -428,7 +428,7 @@ void EvtOmegaOmega::initProbMax() {
 
 }
 
-void EvtOmegaOmega::HadronicAmp(EvtParticle* parent,
+void EvtXiccXicNpi::HadronicAmp(EvtParticle* parent,
         EvtParticle* child,
         EvtVector4C* T,
         const int i,
@@ -454,11 +454,11 @@ void EvtOmegaOmega::HadronicAmp(EvtParticle* parent,
     return;
 }
 
-const double EvtOmegaOmega::ff(const double f0, const double alpha, const double beta, const double gamma, EvtVector4R qqq) {
+const double EvtXiccXicNpi::ff(const double f0, const double alpha, const double beta, const double gamma, EvtVector4R qqq) {
     return f0 * (1 + alpha * qqq * qqq + beta * qqq * qqq * qqq * qqq + gamma * qqq * qqq * qqq * qqq * qqq * qqq);
 }
 
-void EvtOmegaOmega::decay(EvtParticle *b1) {
+void EvtXiccXicNpi::decay(EvtParticle *b1) {
     static EvtId TAUM = EvtPDL::getId("tau-");
 
     b1->initializePhaseSpace(getNDaug(), getDaugs());
