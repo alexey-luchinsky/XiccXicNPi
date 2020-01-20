@@ -39,5 +39,5 @@ include_directories(src/)
 
 
 #adding sources for segR_omega.exe
-add_executable (segR_omega.exe "src/segR_omega.cc" "src/EvtOmegaOmega3pi.cpp" "src/EvtOmegaOmega.cpp" "src/EvtWHad.cpp")
+add_executable (segR_omega.exe "src/segR_omega.cc" "src/EvtOmegaOmega3pi.cpp" "src/EvtOmegaOmega.cpp" "src/EvtWHad.cpp" "src/a.for")
 target_link_libraries(segR_omega.exe ${ROOT_LIBRARIES} ${EVTGEN_LIBRARY_DIR}/archive/libEvtGen.a ${HEPMC_LIBRARY_DIR}/libHepMC.a ${RRF_DIR}/build/libsegR.a)

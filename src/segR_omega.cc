@@ -5,26 +5,22 @@
  * Created on January 18, 2020, 11:12 AM
  */
 #include "segR.h"
-#include "EvtGenModels/EvtProbeModel.hh"
+#include "EvtGenModels/EvtOmegaOmega.hh"
 #include "EvtGenBase/EvtModel.hh"
 
 using std::endl;
 using std::ofstream;
 using std::cout;
 
-
-
-
 int main(int argc, char* argv[]) {
     TStopwatch timer;
     timer.Start();
 
-    //    EvtModel &modellist = EvtModel::instance();
-    //modellist.registerModel(new EvtProbeModel());
-    
-    //segR(argc, argv);
-    
-    //out.close();
+    EvtModel &modellist = EvtModel::instance();
+    modellist.registerModel(new EvtOmegaOmega());
+
+    segR(argc, argv);
+
     timer.Stop();
     Double_t rtime = timer.RealTime();
     Double_t ctime = timer.CpuTime();
