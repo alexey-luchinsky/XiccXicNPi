@@ -134,7 +134,7 @@ void EvtXiccXicNpi::HadronicAmp(EvtParticle* parent,
     return;
 }
 
-const double EvtXiccXicNpi::ff(const double f0, const double alpha, const double beta, const double gamma, EvtVector4R qqq) {
+double EvtXiccXicNpi::ff(const double f0, const double alpha, const double beta, const double gamma, EvtVector4R qqq) {
     return f0 * (1 + alpha * qqq * qqq + beta * qqq * qqq * qqq * qqq + gamma * qqq * qqq * qqq * qqq * qqq * qqq);
 }
 

@@ -3,7 +3,7 @@ MESSAGE("Hello, world")
 IF(DEFINED APPLE)
     MESSAGE("APPLE")
 ENDIF(DEFINED APPLE)
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Wall")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Wall -Wextra")
 
 set(CMAKE_OSX_DEPLOYMENT_TARGET "")
 INCLUDE(SetCompileFlag.cmake)

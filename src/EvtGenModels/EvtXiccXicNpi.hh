@@ -21,7 +21,7 @@ public:
 
     void initProbMax();
     void init();
-    const double ff(const double f0, const double alpha, const double beta, const double gamma, EvtVector4R qqq);
+    double ff(const double f0, const double alpha, const double beta, const double gamma, EvtVector4R qqq);
     void HadronicAmp( EvtParticle* parent, 
                                  EvtParticle* child, 
                                  EvtVector4C* T,
